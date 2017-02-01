@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Desafio Spring Framework Teste</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+</head>
+<body>
+<div class="container">
+
+    <form class="form-signin" th:object="${credentials}" th:action="@{/login}" method="post">
+
+        <div class="input-group">
+            <span class="input-group-addon">Private Key</span>
+            <input  class="form-control" placeholder="Private Key" th:field="*{privateKey}" />
+
+        </div>
+        <br/>
+
+        <div class="input-group">
+            <span class="input-group-addon">Public Key</span>
+            <input  class="form-control" placeholder="Public Key" th:field="*{publicKey}" />
+
+        </div>
+        <br/>
+
+        <input type="submit" value="Acessar"/>
+        <br/>
+
+    </form>
+</div>
+
+</body>
+</html>
